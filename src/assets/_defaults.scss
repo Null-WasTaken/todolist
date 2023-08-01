@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400&display=swap');
+
+$color: #202020;
+$background: #000100;
+$altbg: #00DF9A;
+
+@mixin FlexBox($dir) {
+  display: flex;
+  flex-direction: $dir;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: $background;
+}
