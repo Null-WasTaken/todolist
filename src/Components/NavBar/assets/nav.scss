@@ -15,7 +15,38 @@
 
     .icon {
       margin-inline: 10px;
+      cursor: pointer;
     }
   }
+}
 
+
+.sidebar {
+  position: fixed;
+  background: $background;
+  border-right: #202020 1px solid;
+  width: 300px;
+  height: 100%;
+  padding: 20px;
+  transition: 1000ms;
+  left: 0;
+
+  .items {
+    @include FlexBox(column);
+
+    ul {
+      li {
+        margin: 20px;
+        list-style: none;
+        font-size: 1.3rem;
+        font-weight: 500;
+        cursor: pointer;
+      }
+    }
+
+  }
+}
+
+.hidden {
+  left: -100%;
 }
