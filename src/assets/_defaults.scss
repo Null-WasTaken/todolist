@@ -20,3 +20,12 @@ body {
   background: $background;
   color: #fff;
 }
+
+.hidden {
+  left: -100%;
+  transition: 300ms;
+}
+
+.none {
+  display: none;
+}

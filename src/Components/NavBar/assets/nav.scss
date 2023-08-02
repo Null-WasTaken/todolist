@@ -27,26 +27,28 @@
   border-right: #202020 1px solid;
   width: 300px;
   height: 100%;
-  padding: 20px;
-  transition: 1000ms;
+  transition: 700ms;
   left: 0;
 
   .items {
     @include FlexBox(column);
+    width: 100%;
 
-    ul {
       li {
-        margin: 20px;
         list-style: none;
         font-size: 1.3rem;
         font-weight: 500;
+        padding: 15px;
         cursor: pointer;
+        border-bottom: 1px $color solid ;
+        transition: ease-in-out 300ms;
+
+        &:hover {
+          padding-left: 30px;
+        }
+
       }
-    }
 
   }
 }
 
-.hidden {
-  left: -100%;
-}

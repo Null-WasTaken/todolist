@@ -24,7 +24,7 @@ export default function Navbar() {
 
       <div className={nav ? "sidebar" : "hidden"}>
           <div className={"items"}>
-              <ul>
+              <ul className={!nav ? "none" : ""}>
                   <li>Home</li>
                   <li>Add</li>
                   <li>Upcoming</li>
