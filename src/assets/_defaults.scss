@@ -23,7 +23,7 @@ body {
 
 .hidden {
   left: -100%;
-  transition: 300ms;
+  transition: ease-in-out 300ms;
 }
 
 .none {
