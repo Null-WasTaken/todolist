@@ -1,0 +1,46 @@
+@import "../../../assets/defaults";
+
+.todo {
+  @include FlexBox(column);
+  width: 700px;
+  margin-inline: auto;
+  margin-top: 5rem;
+
+  #{&}-header {
+    @include FlexBox(row);
+    justify-content: space-between;
+    align-items: center;
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 400;
+
+      span {
+        font-size: 0.9rem;
+        color: #eee;
+        font-weight: 300;
+      }
+    }
+
+    img {
+      width: 45px;
+      border-radius: 100%;
+    }
+
+  }
+
+}
+
+.todos {
+  @include FlexBox(column);
+  margin-top: 2rem;
+  #{&}-add {
+    @include FlexBox(row);
+    justify-content: space-around;
+    align-items: center;
+
+    input {
+      width: 90%;
+    }
+  }
+}
