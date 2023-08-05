@@ -6,36 +6,48 @@ export  default function Todo() {
     const [Todo , SetTodo] = React.useState([]);
     const [Input , SetInput] = React.useState("");
 
-    const AddTodo = (items) => {
-        const NewTodo = {
+    const  AddTodo = (todo) => {
+        SetTodo([...Todo, {
             id: Math.random(),
-            todo: items
-        }
+            task: todo,
+            complete: false,
+            isEditing: false
+        }])
+    }
 
-        SetTodo([...Todo , NewTodo]);
+    const DeleteTodo = (id) => {
+        SetTodo(Todo.filter((todo) => todo.id !== id))
+    }
 
-        SetInput("");
-    };
+    const Handle = (e) => {
+        e.preventDefault();
+
+        AddTodo(Input);
+
+        SetInput("")
+    }
 
     return (
-      <>
+          <form onSubmit={Handle}>
           <div className={"todos-add"}>
-          <input type="text" value={Input} onChange={(eve) => SetInput(eve.target.value)}/>
-          <div onClick={Input === "" ? console.log("damn") : () => AddTodo(Input) }>
+          <input type="text" placeholder={"Enter Your Task"} value={Input} onChange={(e) =>  SetInput(e.target.value)}/>
+          <div>
               <AiOutlinePlus size={20} />
           </div>
           </div>
           <div className={"todos-lists"}>
-              {
-                  Todo.map((todo) => (
-                      <li key={Todo.id}>
-                          {todo.todo}
-                          <LiaTimesSolid size={20}/>
-                      </li>
-                  ))
-              }
+                  {
+                      Todo.map((todo , index) => (
+                          <ul key={index}>
+                          <li>{todo.task}</li>
+                              <div onClick={() => DeleteTodo(todo.id)}>
+                                  <LiaTimesSolid size={20} />
+                              </div>
+                          </ul>
+                      ))
+                  }
           </div>
-      </>
+          </form>
     );
 
 

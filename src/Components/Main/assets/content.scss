@@ -33,14 +33,56 @@
 
 .todos {
   @include FlexBox(column);
-  margin-top: 2rem;
+  margin-top: 3rem;
+
+
+  #{&}-lists {
+    @include FlexBox(column);
+    width: 80%;
+    margin: auto;
+
+    ul {
+      height: 30px;
+      @include FlexBox(row);
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background: $color;
+      margin-top: 2rem;
+
+      li {
+        font-weight: 300;
+        list-style: none;
+      }
+
+    }
+  }
+
   #{&}-add {
     @include FlexBox(row);
     justify-content: space-around;
     align-items: center;
 
+    div {
+      margin-top: 3px;
+    }
+
     input {
       width: 90%;
+      border: none;
+      height: 30px;
+      background: $background;
+      border-bottom: #202020 solid 1px;
+      color: #ffffff;
+      padding: 30px;
+      font-size: 1.3rem;
+      transition: 300ms ease-in-out;
+
+      &:focus {
+        border: none;
+        padding: 34px;
+      }
+
     }
   }
 }

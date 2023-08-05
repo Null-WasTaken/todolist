@@ -23,7 +23,9 @@ export default function MainContent() {
             </div>
 
             <div className={"todos"}>
+
                 <Todo />
+
             </div>
         </div>
     );
