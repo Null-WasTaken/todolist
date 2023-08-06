@@ -4,7 +4,7 @@ import "./assets/nav.scss"
 
 export default function Navbar() {
 
-    const [nav , SetNav] = React.useState(true)
+    const [nav , SetNav] = React.useState(false)
 
     return (
         <>
